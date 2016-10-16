@@ -1,5 +1,5 @@
 CC=clang
-CFLAGS=-I
+CFLAGS=-I.
 DEPS = parse.h syntax.h tokens.h output.h
 OBJ = parse.o syntax.o tokens.o output.o main.o
 
