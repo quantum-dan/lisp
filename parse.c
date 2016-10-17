@@ -61,3 +61,13 @@ int find_between_nested(char *string, char start, char end, int len, char *buffe
     }
     return -1;
 }
+
+int split(char *string, char token, int len) {
+    int i;
+    for (i = 0; i < len - 1; ++i) {
+        if (string[i] == token) {
+            return i + 1;
+        }
+    }
+    return -1;
+}
