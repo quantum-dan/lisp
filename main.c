@@ -1,26 +1,16 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include <parse.h>
-#include <string.h>
+#include "parse.h"
 
 int test_parse(char *string);
 
 int main() {
-    char *string = (char *)malloc(100);
-    scanf("%20c", string);
-    test_parse(string);
-    return 0;
+    char* input = (char*)malloc(100);
+    char output[100] = {0};
+    for (int i = 0; i < 10; ++i) {
+        fgets(input, 100, stdin);
+        find_between_nested(input, '(', ')', 100, output);
+        printf("%s\n", output);
+    }
 }
 
-int test_parse(char *string) {
-    char *buffer = (char *)malloc(strlen(string));
-    int s = find_between(string, '(', ')', strlen(string), buffer);
-    if (s == -1) return -1;
-    int result = split(buffer, ' ', strlen(buffer));
-    if (buffer[0] == 'p') {
-        printf("%s\n", buffer + result);
-    } else {
-        printf("Failed!\n");
-    }
-    return 0;
-}
