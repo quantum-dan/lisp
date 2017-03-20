@@ -1,5 +1,6 @@
 // Parsing functions
 #include <string.h>
+#include "parse.h"
 
 int find_position(char *string, char token, int len) {
     int i;
